@@ -1,0 +1,29 @@
+{
+    "apps": [{
+        "name": "luxixi-fe",
+        "script": "build/build.js",
+        "args": "one two",
+        "instances": 1,
+        "autorestart": true,
+        "watch": false,
+        "max_memory_restart": "1G",
+        "env": {
+            "NODE_ENV": "development"
+        },
+        "env_production": {
+            "NODE_ENV": "production"
+        }
+    }],
+
+    "deploy": {
+        "production": {
+            "user": "root",
+            "host": ["39.106.47.163"],
+            "ssh_options": "StrictHostKeyChecking=no",
+            "ref": "origin/master",
+            "repo": "git@gitee.com:wangyunlong0404/luxixi-client.git",
+            "path": "/var/www/production/luxixi-front-end",
+            "post-deploy": "npm install && npm run build"
+        }
+    }
+}
