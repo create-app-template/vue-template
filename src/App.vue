@@ -1,8 +1,5 @@
 <template>
   <div>
-    <router-link to="/">首页</router-link>
-    <router-link to="/bar">bar</router-link>
-    <router-link to="/foo">foo</router-link>
     <router-view></router-view>
   </div>
 </template>
